@@ -14,14 +14,15 @@ interface CommentRepository extends JpaRepository<Comment, Long> {
 interface ReactionRepository extends JpaRepository<Reaction, Long> {
 }
 
-interface FriendshipRepository extends JpaRepository<User, Long> {
+interface RelationRepository extends JpaRepository<User, Long> {
 
 }
+
 
 interface CombinedRepository {
     UserRepository getUserRepository();
     PostRepository getPostRepository();
     CommentRepository getCommentRepository();
     ReactionRepository getReactionRepository();
-    FriendshipRepository getFriendshipRepository();
+    RelationRepository getRelationStatusRepository();
 }

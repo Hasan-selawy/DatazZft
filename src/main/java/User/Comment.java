@@ -3,14 +3,22 @@ package User;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-
 @Entity
+@Table(name="COMMENT")
+
 public class Comment {
 
     @Id
 
-
-    @TableGenerator(name = "comment_generator", table = "id_generator", pkColumnName = "gen_name", valueColumnName = "gen_value", allocationSize = 1)
+    @SequenceGenerator(
+            name = "post_sequence",
+            sequenceName = "comment_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "comment_sequence"
+    )
     private Long commentId;
 
 
@@ -38,43 +46,5 @@ public class Comment {
     private LocalDateTime timestamp;
 
 
-    public Long getCommentId() {
-        return commentId;
-    }
 
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
 }

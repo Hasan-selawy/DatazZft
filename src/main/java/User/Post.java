@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
 
 import java.time.LocalDateTime;
-
 @Entity
+@Table(name="Post")
 public class Post {
 
     @Id
@@ -36,35 +36,5 @@ public class Post {
     }
 
 
-    public Long getPostId() {
-        return postId;
-    }
 
-    public void setPostId(Long postId) {
-        this.postId = postId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
 }
