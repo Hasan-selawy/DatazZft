@@ -1,4 +1,4 @@
-package User;
+package Tables;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
@@ -46,5 +46,54 @@ public class Reaction {
         this.timestamp = timestamp;
     }
 
+    public Reaction() {
+    }
 
+    public Long getReactionId() {
+        return reactionId;
+    }
+
+    public void setReactionId(Long reactionId) {
+        this.reactionId = reactionId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+    public Comment getComment() {
+        return comment;
+    }
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
+    }
+
+    public String getReactionType() {
+        return reactionType;
+    }
+
+    public void setReactionType(String reactionType) {
+        this.reactionType = reactionType;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
 }
